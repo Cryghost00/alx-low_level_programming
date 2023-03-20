@@ -1,26 +1,30 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 /**
-*main - entry point of programs
-*
-*Return: return 0
-*/
+ * main - Determines either greater than 5, is less than 6, or is 0
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int n;
+	int n, m;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	if (n < 0)
+	m = n % 10;
+
+	if (m > 5)
 	{
-		printf("%d is negative\n", n);
+		printf("Last digit of %d and is greater than 5\n", n, m);
 	}
-	else if (n > 0)
+	else if (m == 0)
 	{
-		printf("%d is positive\n", n);
+		printf("Last digit of %d is %d and is 0\n", n, m);
 	}
 	else
-		printf("%d is zero\n", n);
+	{
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, m);
+	}
 	return (0);
 }
