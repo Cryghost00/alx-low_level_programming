@@ -1,16 +1,17 @@
 #include "main.h"
 /**
- * _puts_recursion - fuction like puts();
+ * _puts_recursion - function like puts();
  * @s: input
- * Return: Alays 0 (Success)
+ *
+ * Return: Always 0 (Success)
  */
 void _puts_recursion(char *s)
 {
-	if (*s)
+	if (*s == '\0') /* base case */
 	{
 		_putchar(*s);
-		_puts_recursion(s + 1);
+		return;
 	}
-	else
-		_putchar('\n');
+	_putchar(*s);
+	_puts_recursion(s + 1);
 }
