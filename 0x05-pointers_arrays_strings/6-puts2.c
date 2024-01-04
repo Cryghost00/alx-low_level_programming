@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts2 - prints one charcater out of two
+ * puts2 - prints one character out of two
  * @str: input
  * Return: print
  */
