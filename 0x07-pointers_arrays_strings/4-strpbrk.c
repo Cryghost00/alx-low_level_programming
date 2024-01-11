@@ -6,21 +6,18 @@
  * @accept: parameter 2
  * Return: always o
  */
-
 char *_strbrk(char *s, char *accept)
 {
-	while (*s != '\0')
+	int k;
+
+	while (*s)
 	{
-		const char *a = accept;
-
-		while (*a != '\0')
+		for (k = 0; accept[k]; k++)
 		{
-
-			if (*s == *a)
+			if (*s == accept[k])
 				return (s);
-			a++;
 		}
 		s++;
 	}
-	return (NULL);
+	return ('\0');
 }
